@@ -1,8 +1,9 @@
 require 'bcrypt'
+require 'benchmark'
 
-puts "Enter an enrypted password:"
+puts "Enter an encrypted password:"
 
-encrypted_password = BCrypt::Password.create(gets.chomp)
+encrypted_password = BCrypt::Password.new(gets.chomp)
 
 def break_password(encrypted_password)
   ("aaaaa".."zzzzz").each do |word|
