@@ -14,10 +14,13 @@ def encrypt_password(password)
 end
 
 def break_password(encrypted_password)
+  count = 0
   ("aaaaa".."zzzzz").each do |word|
+    count +=1
     puts word
     if encrypt_password(word) == encrypted_password
       puts "PASSWORD BROKEN. YOUR PASSWORD IS #{word}"
+      puts "Attempts taken: #{count}"
       break
     end
   end
